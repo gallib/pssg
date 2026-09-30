@@ -1,3 +1,4 @@
 vendor/
 docker-compose.override.yml
 .DS_Store
+.php-cs-fixer.cache
