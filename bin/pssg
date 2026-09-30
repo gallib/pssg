@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require $GLOBALS['_composer_autoload_path'] ?? __DIR__ . '/../vendor/autoload.php';
+
+use Gallib\PSSG\Command\BuildCommand;
+use Gallib\PSSG\Command\InitCommand;
+use Gallib\PSSG\Command\ServeCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application('PSSG', '0.1.0');
+
+$application->addCommand(new BuildCommand());
+$application->addCommand(new InitCommand());
+$application->addCommand(new ServeCommand());
+
+$application->run();
